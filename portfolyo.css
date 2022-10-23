@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    font-family: 'Vollkorn', serif;
+    background-color: gray;
+    height: 800px;
+    display: flex;
+
+}
+
+#bod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+#bg-image{
+    height: 500px;
+    width: 100%;
+    background: url(https://t4.ftcdn.net/jpg/02/98/58/41/360_F_298584167_WLdKSUF4ZpQxLe4dX1div4tvC41Nd9N0.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 90%;
+}
+#bg-text{
+    height: 300px;
+    width: 70%;
+    text-align: center;
+    background-color: rgb(208, 255, 239);
+    opacity: 0.35;
+    border-radius: 10px;
+}
+
+#bio{
+    height: 500px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    
+}
+#bio-child1{
+    margin-top: 50px;
+    height: 300px;
+    width: 500px;
+    background: url(https://www.wallpaperflare.com/static/773/663/764/programming-php-code-developer-wallpaper-preview.jpg) no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+#bio-child2{
+    height: 120px;
+    width: 500px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+#footer{
+    margin-top: 90px;
+    background-color: darkgray;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#button2{
+    
+    margin-left: 20px;
+}
