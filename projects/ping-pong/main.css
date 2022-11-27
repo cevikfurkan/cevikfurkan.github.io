@@ -1,0 +1,70 @@
+html, body{
+    height: 100%;
+  }
+
+/*oyun alanı özellikleri*/
+#gameArea{
+    width: 100%;
+    height: 100%;
+    background-color: #845ec2;
+  }
+
+/*çubuk özellikleri*/
+.stick{
+    width: 12px;
+    height: 85px;
+    background-color: #b25b00;
+    position: absolute;
+  }
+
+  #stickLeft{
+    left: 0;
+  }
+  #stickRight{
+    right: 0;
+  }
+
+/*top özellikleri*/
+#ball{
+    width: 16px;
+    height: 16px;
+    background-color: #b25b00;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; /*seçici stilini görmek için farazi değer*/
+    left: 40%; /*seçici stilini görmek için farazi değer*/
+  }
+
+/*çizgi özellikleri*/
+#line{
+    width: 0;
+    height: 100%;
+    border: 1px dashed #b25b00;
+    position: absolute;
+    left: 50%;
+  }
+
+
+/*skor tahtası özellikleri*/
+#scoreboard{
+    width: 50%;
+    height: 20%;
+    margin: auto;
+    border: 2px solid olive; /*seçici stilini görmek için farazi deger, kaldırmayı unutmayın :)*/
+  }
+
+  #scoreLeft, #scoreRight{
+    color: #b25b00;
+    font-family: sans-serif;
+    font-size: 400%;
+    margin-top: 4%;
+  }
+  #scoreLeft{
+    float: left;
+  }
+  #scoreRight{
+    float: right;
+  }
+
+
+  /* https://medium.com/@kahil_kubilay/javascript-ile-oyun-yap%C4%B1m%C4%B1-oyun-alan%C4%B1-1d9905576a3 */
