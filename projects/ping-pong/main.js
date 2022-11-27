@@ -15,7 +15,7 @@ ball.style.left = (window.innerWidth/2) - (16/2) + 'px';
 
 var ballTop = 0;
 var ballLeft = 0; 
-var gameSpeed = 20;
+var gameSpeed = 10;
 
 function pxAdd(numb){
 	return numb + 'px';
