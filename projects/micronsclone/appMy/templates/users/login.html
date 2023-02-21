@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark sticky-top"> 
+    <div class="container"> 
+      <a class="navbar-brand display-4" href="/">
+        <span style="color: green; font-size:50px;">Microns 🚀</span>
+      </a>
+      <form class="d-flex mt-1">
+        <div class="row">
+          <div class="col-4">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#forbuyers">For Sellers</a>
+          </div>
+          <div class="col-4">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#forsellers">For Buyers</a>
+          </div>
+          <div class="col-3">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#blog">Blog</a>
+          </div>
+          <div class="col-3">
+            <a class="btn btn-outline-success btn-dark bg-success mb-1 nav-link scrollto" role="button" href="#blog">Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
+<div class="row justify-content-center mt-5">
+    <div class="col-4">
+        
+        {% if hata %}
+            <div class="text-danger">{{ hata }}</div>
+        {% endif %}
+            
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Username</label>
+                <input type="text" name="username" id="form2Example1" class="form-control" />
+            </div>
+        
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Password</label>
+                <input type="password" name="password" id="form2Example2" class="form-control" />
+            </div>
+        
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+                </div>
+            </div>
+        
+            <div class="col">
+                <!-- Simple link -->
+                <a href="#!">Forgot password?</a>
+            </div>
+            </div>
+        
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+        
+            <!-- Register buttons -->
+            <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+            </button>
+        
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+            </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+  <div class="container-fluid bg-dark">
+    <div class="row bg-light ">
+        <div class="col-2 bg-light"></div>  
+        <div class="col-4 bg-light text-center">
+            <h1>Microns 🚀</h1> 
+    <h3>The best micro-startups for sale, delivered straight to your inbox every week.</h3>
+    <p>© Microns LLC. All Rights Reserved.</p> 
+        </div>  
+        <div class="col-4 bg-light mt-5 text-center">
+            <button class="bt m-2">About</button>
+            <button class="bt m-2">Newsletter Library</button> 
+            <button class="bt m-2">Affiliate Program</button>
+            <button class="bt m-2">MicoStartups.co</button> 
+            <button class="bt m-2">Blog</button> 
+            <button class="bt m-2">Sell Your Startup</button>
+    </div> 
+
+        </div>
+        <div class="col-2 bg-light"></div>  
+    </div> 
+ </div>   
+
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

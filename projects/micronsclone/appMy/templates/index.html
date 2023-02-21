@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Microns Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-dark sticky-top"> 
+    <div class="container"> 
+      <a class="navbar-brand display-4" href="/">
+        <span style="color: green; font-size:50px;">Microns 🚀</span>
+      </a>
+      <form class="d-flex mt-1">
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#forbuyers">For Sellers</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#forsellers">For Buyers</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-warning btn-dark bg-warning mb-1 nav-link scrollto" role="button" href="#blog">Blog</a>
+          </div>
+          
+          {% if request.user.is_authenticated %}
+          <div class="col">
+            <a href="">{{ request.user }}</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-success btn-dark bg-success mb-1 nav-link scrollto" role="button" href="{% url 'logoutUser' %}">Logout</a>
+          </div>
+          {% else %}
+          <div class="col">
+            <a class="btn btn-outline-success btn-dark bg-success mb-1 nav-link scrollto" role="button" href="{% url 'loginUser' %}">Login</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-outline-success btn-dark bg-success mb-1 nav-link scrollto" role="button" href="{% url 'registerUser' %}">Sign in</a>
+          </div>
+          {% endif %}
+            
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="background-color: whitesmoke; height: 600px; background-size: cover ;">
+    <div class="row">
+      <div style="opacity:93%; background-color: whitesmoke;" class="col-md-4 mt-4">
+        <h1 class="mt-5" > <span style="font-size: 60px; color: red;">Micro</span> Startups For Sale. <span style="font-size: 60px;"> Zero Comission.</span></h1>
+        <div class="w-form">
+          <form method="get" class="form" aria-label="Hero-Signup">
+            <input type="text" class="w-input" maxlength="256" name="Subscribe-email" data-name="Subscribe email" placeholder="Your email address*" id="Subscribe-email" required="">
+            <input type="submit" value="Subscribe for free" class="w-button btn-primary bg-warning">
+          </form>
+        </div>
+        <h1 class="mt-2" style="font-size: 20px;">Microns.io is a marketplace to buy the best micro-startups without commission.</h1>
+      </div>
+      <div class="col-md-3" style="background-color: whitesmoke;opacity: 93%;"></div>
+      <div class="col-md-5" style="background-color: whitesmoke ;opacity: 93%;">
+        <div id="carouselExampleIndicators" class="carousel slide mt-4 me-4 mb-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="https://global-uploads.webflow.com/60fa8972eef72783b828a3a6/62987ae7b942ea56b780d438_Frame%20198.svg" alt="">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://global-uploads.webflow.com/60fa8972eef72783b828a3a6/62987ae066124295afeeae57_Frame%20196.svg" alt="">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://global-uploads.webflow.com/60fa8972eef72783b828a3a6/62987ae7b942ea56b780d438_Frame%20198.svg" alt="">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+   <br><br><br>
+
+  <!-- // ZAFER -->
+  <!-- Butonlar ve Başlıklar -->
+  <div id="forsellers" class="container-fluied p-5">
+    <br> 
+    <h1>Popular Startups For Sale 🚀</h1>
+    <h3 style="opacity: 75%;">Browse our popular micro-startup listings</h3>
+    <br> <br>
+    <button type="button" class="btn btn-outline-warning">ALL STARTUPS</button>
+    <button type="button" class="btn btn-outline-warning">MICRO-SAAS</button>
+    <button type="button" class="btn btn-outline-warning">DIRECTROY</button>
+    <button type="button" class="btn btn-outline-warning">COMMUNITY</button>
+    <button type="button" class="btn btn-outline-warning">MOBILE APP</button>
+  </div>
+  <!-- İlanlar -->
+  <div class="row row-cols-1 row-cols-md-3 g-1 p-5">
+    
+    {% for i in projects_se %}
+    <div class="col">
+      <div class="card m-5 p-3">
+        <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ i.title }}</h5>
+          <p class="card-text">{{ i.text }}</p>
+          <hr>
+          <p>🤑 ARR: ${{ i.text2 }}</p>
+          <p>🔍 Category: {{ i.text4 }}</p>
+          <p>🧐 Asking price: ${{ i.text6 }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      
+  </div>
+    
+
+    <!-- // FURKAN -->
+  <div id="forbuyers" class="container mt-2">
+    <h3 class="ms-3">Recently Sold Startups!</h3>
+    <p class="ms-3 text-muted">Browse recently sold micro-startup listings</p>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        
+        {% for i in projects_so %}
+        <div class="col-md-4">
+          <div style="height: 580px;" class="card bg-secondary bg-opacity-10 border-warning m-2 shadow">
+            <div class="container mt-3">
+              <img class="card-img-top container shadow-sm" src="{{ i.image.url }}">
+              <div class="card-body">
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.text }}</p>
+                <hr>
+                <p><strong>ARR: </strong>${{ i.text2 }}</p>
+                <p><strong>No. Of Customers: </strong>{{ i.text3 }}</p>
+                <p><strong>Category: </strong>{{ i.text4 }}</p>
+                <p><strong>Launched In: </strong>{{ i.text5 }}</p>
+                <p><strong>Closed Price: </strong>${{ i.text6 }}</p>
+              </div>
+            </div>
+          </div>   
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+    <!-- // FATİH -->
+  <div class="container-fluid bg-dark">
+    <div class="row bg-light ">
+      <div class="col-2 bg-light"></div>  
+      <div class="col-4 bg-light text-center">
+        <h1>Microns 🚀</h1> 
+        <h3>The best micro-startups for sale, delivered straight to your inbox every week.</h3>
+        <p>© Microns LLC. All Rights Reserved.</p> 
+      </div>  
+      <div class="col-4 bg-light mt-5 text-center">
+        <button class="bt m-2">About</button>
+        <button class="bt m-2">Newsletter Library</button> 
+        <button class="bt m-2">Affiliate Program</button>
+        <button class="bt m-2">MicoStartups.co</button> 
+        <button class="bt m-2">Blog</button> 
+        <button class="bt m-2">Sell Your Startup</button>
+      </div>
+    </div>
+    <div class="col-2 bg-light"></div>  
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+   
+</body>
+
+</html>
