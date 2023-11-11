@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <title>Alacak / Verecek Hesapla</title>
+    <style>
+        body{
+            font-family: 'Merriweather', serif;
+            font-size: medium;
+            text-align: center;
+            background-color: rgba(10, 40, 102, 0.705);
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Alacak/Verecek Hesaplama Aracı</h1>
+    <hr><br>
+    <hr style="width: 40%;">
+
+    <h3>Borç bilgisi ve komisyon girerek ödemeyi hesapla!</h3>
+    <table class="center" style="text-align: left;">
+        <tr>
+            <td>Kullanıcı adı: </td>
+            <td><input type="text" oninput="hesapla()" id="ad" placeholder="Kullanıcı adını girin"></td>
+        </tr>
+        <tr>
+            <td>Bakiye: </td>
+            <td><input type="number" oninput="hesapla()" id="tutar" placeholder="Borç bilgisini girin (TL)"></td>
+        </tr>
+        <tr>
+            <td>Komisyon: </td>
+            <td><input type="number" oninput="hesapla()" id="kom" placeholder="Komisyonu girin (%)"></td>
+        </tr>
+        <tr>
+            <td>Kasa komisyonu: </td>
+            <td><input type="number" oninput="hesapla()" id="kom2" placeholder="Kasa komisyonu girin (%)"></td>
+        </tr>
+    </table>
+
+    <hr style="width: 40%;">
+    <h3 id="hesap"></h3>
+    <p id="borç"></p>
+    <p id="komisyon"></p>
+    <p id="komtut"></p>
+    <p id="ödeme"></p>
+    <p id="kasa"></p>
+    <p id="kazanç"></p>
+
+
+    <br><hr>
+
+
+<script>
+    function hesapla(){
+        var ad = document.getElementById("ad").value
+        var tutar = Number(document.getElementById("tutar").value)
+        var kom = Number(document.getElementById("kom").value)
+        var kom2 = Number(document.getElementById("kom2").value)
+        var komtut = ((tutar*kom)/100)
+        var komtut2 = ((tutar*kom2)/100)
+        var odeme = (tutar-((tutar*kom)/100))
+        var kasa_odeme = (tutar-((tutar*kom2)/100))
+        var kazanc = (odeme-kasa_odeme)
+        
+        document.getElementById("hesap").innerHTML = "<ins>Hesaplama Sonucu (</ins>" + ad + "<ins>) :</ins>" ;
+        document.getElementById("borç").innerHTML = "Borç bilgisi: " + tutar + " TL" ;
+        document.getElementById("komisyon").innerHTML = "Komisyon: " + "%" + kom ;
+        document.getElementById("komtut").innerHTML = "Komisyon tutarı: " + komtut + " TL" ;
+        document.getElementById("ödeme").innerHTML = "Ödemesi gereken: " + odeme + " TL" ;
+        document.getElementById("kasa").innerHTML = "Kasaya ödenmesi gereken: " + kasa_odeme + " TL" ;
+        document.getElementById("kazanç").innerHTML = "Kazanç: " + kazanc + " TL" ;
+
+
+    }
+
+
+</script>
+    
+</body>
+</html>

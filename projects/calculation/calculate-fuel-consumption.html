@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <title>Yakıt Tüketimini Hesapla</title>
+    <style>
+        body{
+            font-family: 'Merriweather', serif;
+            font-size: medium;
+            text-align: center;
+            background-color: gray;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Yakıt Tüketimi Hesaplama Aracı</h1>
+    <hr>
+
+    <h3>Ödenen Tutar ve Gidilen Mesafeye Göre Ortalama Yakıt Tüketimini Bul!</h3>
+    <table class="center" style="text-align: left;">
+        <tr>
+            <td>Ödenen Tutar: </td>
+            <td><input type="number" oninput="hesapla()" id="tutar" placeholder="Tutar giriniz (TL)"></td>
+        </tr>
+        <tr>
+            <td>Gidilen Mesafe: </td>
+            <td><input type="number" oninput="hesapla()" id="mesafe" placeholder="Mesafe giriniz (KM)"></td>
+        </tr>
+    </table>
+
+    <hr style="width: 40%;">
+    <h3 id="hesap"></h3>
+    <p id="ücret"></p>
+    <p id="yol"></p>
+    <p id="tuketim"></p>
+
+    <hr>
+    <h3>Ödenen Tutar ve Ortalama Yakıt Tüketimine Göre Gidilebilecek Mesafeyi Öğren!</h3>
+    <table class="center" style="text-align: left;">
+        <tr>
+            <td>Ödenen Tutar: </td>
+            <td><input type="number" oninput="hesapla2()" id="tutar2" placeholder="Tutar giriniz (TL)"></td>
+        </tr>
+        <tr>
+            <td>100 Km'deki Yakıt Tüketimi: </td>
+            <td><input type="number" oninput="hesapla2()" id="yakittuketimi" placeholder="Tüketimi giriniz (LT)"></td>
+        </tr>
+        <tr>
+            <td>Yakıtın Litre Fiyatı: </td>
+            <td><input type="number" oninput="hesapla2()" id="yakitfiyati" placeholder="Yakıt fiyatı giriniz (TL)"></td>
+        </tr>
+    </table>
+
+    <hr style="width: 40%;">
+    <h3 id="hesap2"></h3>
+    <p id="ödeme"></p>
+    <p id="yakittuketim"></p>
+    <p id="yakitfiyat"></p>
+    <p id="sonuc2"></p>
+
+    <hr>
+    <h3>Gidilecek Mesafe ve Ortalama Yakıt Tüketimine Göre Ödenecek Tutarı Hesapla!</h3>
+    <table class="center" style="text-align: left;">
+        <tr>
+            <td>Gidilecek Mesafe: </td>
+            <td><input type="number" oninput="hesapla3()" id="mesafe2" placeholder="Mesafeyi giriniz (KM)"></td>
+        </tr>
+        <tr>
+            <td>100 Km'deki Yakıt Tüketimi: </td>
+            <td><input type="number" oninput="hesapla3()" id="yakittuketimi2" placeholder="Tüketimi giriniz (LT)"></td>
+        </tr>
+        <tr>
+            <td>Yakıtın Litre Fiyatı: </td>
+            <td><input type="number" oninput="hesapla3()" id="yakitfiyati2" placeholder="Yakıt fiyatı giriniz (TL)"></td>
+        </tr>
+    </table>
+
+    <hr style="width: 40%;">
+    <h3 id="hesap3"></h3>
+    <p id="yol2"></p>
+    <p id="yakittuketim2"></p>
+    <p id="yakitfiyat2"></p>
+    <p id="sonuc3"></p>
+    <hr>
+
+<script>
+    function hesapla(){
+        var tutar = Number(document.getElementById("tutar").value)
+        var mesafe = Number(document.getElementById("mesafe").value)
+        var sonuc = tutar/mesafe;
+        sonuc = sonuc.toFixed(2);
+        document.getElementById("hesap").innerHTML = "<ins>Hesaplama Sonucu:</ins>" ;
+        document.getElementById("ücret").innerHTML = "Ödenen tutar: " + tutar + " TL" ;
+        document.getElementById("yol").innerHTML = "Gidilen mesafe: " + mesafe + " km" ;
+        document.getElementById("tuketim").innerHTML = "Kilometre başına ortalama <ins>tüketim</ins>: " + sonuc + " TL" ;
+    }
+
+    function hesapla2(){
+        var tutar2 = Number(document.getElementById("tutar2").value)
+        var yakittuketimi = Number(document.getElementById("yakittuketimi").value)
+        var yakitfiyati = Number(document.getElementById("yakitfiyati").value)
+        var sonuc2 = ((tutar2/yakitfiyati)/yakittuketimi)*100;
+        sonuc2 = sonuc2.toFixed(2);
+        document.getElementById("hesap2").innerHTML = "<ins>Hesaplama Sonucu:</ins>" ;
+        document.getElementById("ödeme").innerHTML = "Ödenen tutar: " + tutar2 + " TL" ;
+        document.getElementById("yakittuketim").innerHTML = "100 Km'deki yakıt tüketimi: " + yakittuketimi + " LT" ;
+        document.getElementById("yakitfiyat").innerHTML = "Yakıtın litre fiyatı: " + yakitfiyati + " TL" ;
+        document.getElementById("sonuc2").innerHTML = "Gidilebilecek yaklaşık <ins>mesafe</ins>: " + sonuc2 + " KM" ;
+    }
+
+    function hesapla3(){
+        var mesafe2 = Number(document.getElementById("mesafe2").value)
+        var yakittuketimi2 = Number(document.getElementById("yakittuketimi2").value)
+        var yakitfiyati2 = Number(document.getElementById("yakitfiyati2").value)
+        var sonuc3 = ((mesafe2/100)*yakittuketimi2)*yakitfiyati2;
+        sonuc3 = sonuc3.toFixed(2);
+        document.getElementById("hesap3").innerHTML = "<ins>Hesaplama Sonucu:</ins>" ;
+        document.getElementById("yol2").innerHTML = "Gidilecek mesafe: " + mesafe2 + " km" ;
+        document.getElementById("yakittuketim2").innerHTML = "100 Km'deki yakıt tüketimi: " + yakittuketimi2 + " LT" ;
+        document.getElementById("yakitfiyat2").innerHTML = "Yakıtın litre fiyatı: " + yakitfiyati2 + " TL" ;
+        document.getElementById("sonuc3").innerHTML = "Ödenecek yaklaşık <ins>tutar</ins>: " + sonuc3 + " TL" ;
+    }
+
+</script>
+    
+</body>
+</html>
